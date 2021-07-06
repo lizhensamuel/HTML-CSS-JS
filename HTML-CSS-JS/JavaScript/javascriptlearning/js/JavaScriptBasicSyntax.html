@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- 导入jQuery文件   -->
+    <!-- 使用jQuery
+            公式：$(selector).action();
+    -->
+    <script src="../../lib/jquery-3.6.0.js"></script>
+
+    <!--  内部标签使用js,script标签内写JavaScript代码,可以放在<head>标签中,也可以放在<body>标签中 -->
+    <script>
+        alert("hello world");
+    </script>
+    <!-- 外部引入js,注意:一定以用一对<script>标签来引用   -->
+    <script src="JavaScriptBasicSyntax.js"></script>
+
+    <!--  不用显式定义type,默认就是javascript   -->
+    <script type="text/javascript"></script>
+
+    <script>
+        'use strict';
+        let i=111;
+        alert(i);
+    </script>
+
+</head>
+<body>
+<p>鼠标坐标：<span id="mouseText"></span></p>
+<div id="mouseDiv" style="height: 500px;width: 500px;border: 3px solid red">
+
+</div>
+
+
+<script>
+    //当前页面元素加载完后，响应事件
+    $(document).ready(function () { });
+    //简写
+    $(function () { });
+    $('#mouseDiv').mousemove(function (e) {
+        $('#mouseText').text('x:'+e.pageX+'y:'+e.pageY);
+
+    })
+
+
+    //操作DOM
+    $('#mouseText').text();//获取值
+    $('#mouseText').text('敲里吗');//设置值
+    $('#mouseText').html();//获取值
+    $('#mouseText').html('<strong>敲里吗呀<strong>');//设置值
+    //操作CSS
+    $('#mouseText').css("background");//获取属性值
+    $('#mouseText').css("color","red");//设置单个属性值
+    $('#mouseText').css({"color":"blue","font-size":"30px"});//设置多个属性值
+    //元素的显示和隐藏,本质：display:none;
+    $('#mouseText').show();//显示
+    $('#mouseText').hide();//隐藏
+
+
+
+
+</script>
+
+</body>
+</html>

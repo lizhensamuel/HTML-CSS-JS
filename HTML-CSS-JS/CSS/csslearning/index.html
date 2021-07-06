@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 规范
+    <style></style>中可以编写css代码,每一个声明最好用分号结尾
+    语法:
+        选择器{
+            声明1;
+            声明2;
+            声明3;
+        }
+    -->
+    <!-- 内部样式表 -->
+    <style>
+        h1{
+            color: blue;
+        }
+    </style>
+    <!-- 外部样式两种写法:
+    1.链接式,<link>属于html标签,只能放在html源码中使用
+        <link rel="stylesheet" href="...">
+    2.导入式,属于css样式,是css2.1特有的,在html中使用需要在<style>标签中使用,也可以在css中使用以导入其他css文件
+      <style>
+        @import url("...");
+      </style>
+    -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <!-- 优先级:行内样式>内部样式>外部样式,也就是遵循就近原则 -->
+    <!--行内样式:在标签元素中,编写一个style属性,编写样式即可-->
+    <h1 style="color:blue">这是标题</h1>
+
+    <h1 class="class1">这也是标题</h1>
+
+    <h1 id="id1">这还是标题</h1>
+
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+
+    <ul>
+        <li class="li1" id="id2">
+            <p>1-1-1</p>
+            <p>1-1-1</p>
+            <p>1-1-1</p>
+        </li>
+        <li>
+            <p>1-2-1</p>
+        </li>
+        <li>
+            <p>1-3-1</p>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <p>2-1-1</p>
+        </li>
+        <li>
+            <p>2-2-1</p>
+        </li>
+        <li>
+            <p>2-3-1</p>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <p>3-1-1</p>
+        </li>
+        <li>
+            <p>3-2-1</p>
+        </li>
+        <li>
+            <p>3-3-1</p>
+        </li>
+    </ul>
+
+    <a href="http://www.2333.com"></a>
+    <a href="2333.jpg"></a>
+    <a href="233.doc"></a>
+
+</body>
+</html>

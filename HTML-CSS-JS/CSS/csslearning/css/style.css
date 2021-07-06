@@ -1,0 +1,185 @@
+/*外部样式*/
+
+/*初始化样式操作*/
+h1,ul,li,a,body{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/*标签选择器,会选择页面上所有的这个标签的元素*/
+h1{
+    color: blue;
+}
+/*类选择器,可以多个标签归类使用*/
+.class1{
+    color: yellow;
+}
+/*id选择器,id必须保持全局唯一*/
+#id1{
+    color: black;
+}
+/*优先级:id选择器>类选择器>标签选择器*/
+
+/*后代选择器*/
+ul p{
+    color: black;
+}
+/*子选择器*/
+body>ul{
+    color: aqua;
+}
+/*相邻兄弟选择器,只选择一个,相邻(向下),单个弟弟选择器*/
+.li1 + li{
+    color: red;
+}
+/*通用选择器,选择多个,下方的所有兄弟,全部弟弟选择器*/
+.li1 ~ li{
+    color: black;
+}
+
+/*结构伪类选择器，伪类可以理解为通过冒号来筛选*/
+/*超链接伪类:
+:hover,鼠标悬浮时
+:active,鼠标按下没释放时
+:link,未访问链接
+:visited,已访问链接
+*/
+/*ul的所有li标签中的第一个*/
+ul li:first-child{
+    color: aliceblue;
+}
+/*ul的所有li标签中的最后一个*/
+ul li:last-child{
+    color: blue;
+}
+/*选中当前元素的父级元素的第n个子元素,并且要和当前元素同类才会生效*/
+p:nth-child(1){
+    color: #322fff;
+}
+/*选中当前元素的父级元素的第n个和当前元素同类型的元素*/
+p:nth-of-type(2){
+    color: blue;
+}
+
+/*属性选择器,选择带有指定属性的标签,指定的属性还能用正则表达式来匹配
+可以匹配的元素有:
+属性名;
+属性名=属性值(可以使用正则表达式匹配);
+"=",表示绝对等于
+"*=",表示包含
+"^=",表示以此开头
+"$=",表示以此结尾
+*/
+li[id]{
+
+}
+li[id=id2]{
+
+}
+li[class="li1"]{
+
+}
+a[href^=http]{
+
+}
+
+
+/*css属性font
+font-family:字体,可以设置两种字体分别应用于英文和中文
+font-size:字体大小
+font-weight:字体粗细
+font-color:字体颜色
+font: 风格 粗细 大小 样式
+*/
+h1{
+    font: oblique bolder 30px "楷体" ;
+}
+
+/*文本样式
+颜色:color: #000000/rgb(0,0,0)/rgba(0,0,0,1);还可以直接使用opacity属性来实现透明度调节
+对齐方式:text-align
+段落首行缩进:text-indent
+行高:line-height,行高跟块的高度一样就可以上下居中
+装饰:text-decoration:underline/line-through(中划线)/overline(上划线)/none
+文本图片对齐:
+img,span{
+    vertical-align:middle;
+}
+文本阴影:颜色,水平偏移量,竖直偏移量,阴影半径
+text-shadow:#0000 10px 10px 10px;
+*/
+
+/*列表样式
+list-style:
+    none 去掉圆点
+    circle 空心圆
+    decimal 数字
+    square 正方形
+*/
+
+/*背景图片
+background-image:url(""),默认平铺
+background-repeat:布局方式
+    repeat-x,水平平铺
+    repeat-y,竖直平铺
+    no-repeat,不平铺
+background: red url("") 200px 100px no-repeat;颜色,图片,图片位置,平铺方式
+*/
+
+/*渐变
+background-image:linear-gradient(19deg,#21D4FD 0%,#00ff4e 100%);
+*/
+
+/*边框
+border:1px solid red;粗细,样式,颜色
+    solid:实线
+    dashed:虚线
+border-radius:10px;圆角边框
+border-radius:10px 20px;左上和右下/右上和左下
+*/
+
+/*使用margin元素实现居中
+条件,块元素,有固定宽度
+*/
+div{
+    margin: 0 auto;
+}
+
+/*盒子阴影
+box-shadow:10px 10px 100px yellow;
+*/
+
+/*display
+    block块元素
+    inline行内元素
+    inline-block,保持块元素特性但又能按行内元素排列
+*/
+
+/*float
+clear:right;右侧不允许有浮动元素
+clear:left;左侧不允许有浮动元素
+clear:both;两侧都不允许有浮动元素
+clear:none;允许两侧有浮动元素
+*/
+
+/*overflow:
+hidden,将超出部分隐藏
+scroll,内容超出后自动添加滚动条
+*/
+
+/*定位
+相对定位:相对原来正常的位置进行指定的偏移,它仍然在标准文档流中,原来的位置也会保留下来
+position:relative;
+绝对定位:
+基于xxx定位
+1.父级元素没有定位属性时,相对浏览器定位
+2.父级元素有定位属性时,相对父级元素定位
+定位后的位置不在标准文档流中,原来的位置不会被保留
+position:absolute;
+固定定位:相对于浏览器定位
+position:fixed;
+
+*/
